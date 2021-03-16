@@ -8,7 +8,7 @@ git clone git@github.com:bijayraj/siu_vog_api_node.git
 ```
 2. Start express application using npm
 ```shell script
-cd alumni-directory-api
+cd siu_vog_api_node
 npm install
 npm start
 ```
@@ -29,4 +29,3 @@ npm run db:migrate
 * From the response body of login, copy the token field.
 * In documentation page, click on 'Authorize' and paste the copied token into Bearer 'field' and click login. 
 * All routes will be accessible now!
-

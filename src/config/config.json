@@ -1,0 +1,28 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./src/resource/db3.sqlite3",
+    "seederStorage": "sequelize",
+    "jwtSecret": "Apple ball cat",
+    "swaggerApplicationName": "Thapathali Alumni API V1 - Dev",
+    "baseApiPath": "/api/v1"
+  },
+
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./src/resource/db3.sqlite3",
+    "seederStorage": "sequelize",
+    "jwtSecret": "Apple ball cat",
+    "swaggerApplicationName": "Thapathali Alumni API V1 - Test/Staging",
+    "baseApiPath": "/api/v1"
+  },
+
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./src/resource/db3.sqlite3",
+    "seederStorage": "sequelize",
+    "jwtSecret": "Apple ball cat egg fat goat",
+    "swaggerApplicationName": "Thapathali Alumni API V1 - Prod",
+    "baseApiPath": "/api/v1"
+  }
+}

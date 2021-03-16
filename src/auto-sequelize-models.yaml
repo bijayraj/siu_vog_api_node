@@ -1,0 +1,241 @@
+components:
+    schemas:
+        Exercise:
+            type: object
+            properties:
+                id:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                exerciseType:
+                    type: string
+                    maxLength: 255
+                title:
+                    type: string
+                    maxLength: 255
+                subTitle:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                details:
+                    type: string
+                difficulty:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                duration:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                minDuration:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                maxDuration:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                imageUrl:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                videoUrl:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                recordingUrl:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                icon:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                created_at:
+                    type: string
+                    format: date-time
+                updated_at:
+                    type: string
+                    format: date-time
+            required:
+                - exerciseType
+                - title
+                - details
+                - created_at
+                - updated_at
+        Member:
+            type: object
+            properties:
+                id:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                firstName:
+                    type: string
+                    maxLength: 255
+                lastName:
+                    type: string
+                    maxLength: 255
+                firstNameNepali:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                lastNameNepali:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                dob:
+                    type:
+                        - string
+                        - 'null'
+                    format: date
+                startDate:
+                    type:
+                        - string
+                        - 'null'
+                    format: date
+                endDate:
+                    type:
+                        - string
+                        - 'null'
+                    format: date
+                photoUrl:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                description:
+                    type:
+                        - string
+                        - 'null'
+                email:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                created_at:
+                    type: string
+                    format: date-time
+                updated_at:
+                    type: string
+                    format: date-time
+            required:
+                - firstName
+                - lastName
+                - created_at
+                - updated_at
+        RefreshToken:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int32
+                token:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                expiryDate:
+                    type:
+                        - string
+                        - 'null'
+                    format: date-time
+                createdByIp:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                revokedDate:
+                    type:
+                        - string
+                        - 'null'
+                    format: date-time
+                revokedByIp:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                replacedByToken:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                created_at:
+                    type: string
+                    format: date-time
+                updated_at:
+                    type: string
+                    format: date-time
+                User:
+                    $ref: '#/components/schemas/User'
+            required:
+                - id
+                - created_at
+                - updated_at
+        User:
+            type: object
+            properties:
+                id:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                username:
+                    type: string
+                    maxLength: 255
+                password:
+                    type: string
+                    maxLength: 255
+                memberId:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                role:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                verificationToken:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                resetToken:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                resetTokenExpiry:
+                    type:
+                        - string
+                        - 'null'
+                    format: date-time
+                created_at:
+                    type: string
+                    format: date-time
+                updated_at:
+                    type: string
+                    format: date-time
+                RefreshTokens:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/RefreshToken'
+            required:
+                - username
+                - password
+                - created_at
+                - updated_at

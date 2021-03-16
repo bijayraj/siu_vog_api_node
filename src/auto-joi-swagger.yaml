@@ -1,0 +1,69 @@
+components:
+    schemas:
+        ExerciseCreate:
+            type: object
+            properties:
+                title:
+                    type: string
+                subTItle:
+                    type: string
+                exerciseType:
+                    type: string
+                details:
+                    type: string
+                difficulty:
+                    type: number
+                    format: float
+                duration:
+                    type: number
+                    format: float
+                maxDuration:
+                    type: number
+                    format: float
+                minDuration:
+                    type: number
+                    format: float
+                imageUrl:
+                    type: string
+                videoUrl:
+                    type: string
+                icon:
+                    type: string
+            required:
+                - title
+                - exerciseType
+                - details
+            additionalProperties: false
+        MemberCreate:
+            type: object
+            properties:
+                firstName:
+                    type: string
+                lastName:
+                    type: string
+                firstNameNepali:
+                    type: string
+                lastNameNepali:
+                    type: string
+                startDate:
+                    type: string
+                    format: date-time
+                endDate:
+                    type: string
+                    format: date-time
+                dob:
+                    type: string
+                    format: date-time
+                photoUrl:
+                    type: string
+                description:
+                    type: string
+                email:
+                    type: string
+                    format: email
+            required:
+                - firstName
+                - lastName
+                - dob
+                - email
+            additionalProperties: false

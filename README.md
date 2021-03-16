@@ -1,11 +1,10 @@
-# Alumni Directory API
-This repository contains NodeJS API for alumni directory
-of Thapathali campus. 
+# SIU VOG API
+This repository contains NodeJS API for Voice on the GO project. 
 
 # Usage
 1. Clone this repository
 ```shell script
-git clone git@github.com:Thapathali-Alumni/alumni-directory-api.git
+git clone git@github.com:bijayraj/siu_vog_api_node.git
 ```
 2. Start express application using npm
 ```shell script

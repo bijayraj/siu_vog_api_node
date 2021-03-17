@@ -1,5 +1,5 @@
 {
-  "developments": {
+  "development": {
     "dialect": "sqlite",
     "storage": "./src/resource/db3.sqlite3",
     "seederStorage": "sequelize",
@@ -21,14 +21,16 @@
       }
     }
   },
-  "development": {
+  "developments": {
     "use_env_variable": "DATABASE_URL",
     "dialectOptions": {
       "ssl": {
-        "require": true
+        "require": true,
+        "rejectUnauthorized": false
       }
     },
     "dialect": "postgres",
+    "protocol": "postgres",
     "operatorAliases": false,
     "seederStorage": "sequelize",
     "jwtSecret": "Apple ball cat egg fat goat",

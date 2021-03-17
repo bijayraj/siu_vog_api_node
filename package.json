@@ -9,7 +9,7 @@
     "doc:swaggerschemas": "node ./src/get-swagger-doc.js",
     "start": "node ./src/get-swagger-doc.js & node app.js",
     "watch": "npm run db:migrate & npm run db:seed:all & env NODE_ENV=development nodemon app.js",
-    "startprod": "node app.js"
+    "startprod": "npm run db:migrate & npm run db:seed:all & node app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

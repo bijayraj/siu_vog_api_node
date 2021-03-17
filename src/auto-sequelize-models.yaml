@@ -67,6 +67,14 @@ components:
                 updated_at:
                     type: string
                     format: date-time
+                UserExercises:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/UserExercise'
+                Users:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/User'
             required:
                 - exerciseType
                 - title
@@ -185,6 +193,37 @@ components:
                 - id
                 - created_at
                 - updated_at
+        UserExercise:
+            type: object
+            properties:
+                id:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                duration:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                times:
+                    type:
+                        - integer
+                        - 'null'
+                    format: int32
+                created_at:
+                    type: string
+                    format: date-time
+                updated_at:
+                    type: string
+                    format: date-time
+                User:
+                    $ref: '#/components/schemas/User'
+                Exercise:
+                    $ref: '#/components/schemas/Exercise'
+            required:
+                - created_at
+                - updated_at
         User:
             type: object
             properties:
@@ -204,6 +243,26 @@ components:
                         - integer
                         - 'null'
                     format: int32
+                firstName:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                lastName:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                organization:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
+                occupation:
+                    type:
+                        - string
+                        - 'null'
+                    maxLength: 255
                 role:
                     type:
                         - string
@@ -234,6 +293,14 @@ components:
                     type: array
                     items:
                         $ref: '#/components/schemas/RefreshToken'
+                UserExercises:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/UserExercise'
+                Exercises:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Exercise'
             required:
                 - username
                 - password

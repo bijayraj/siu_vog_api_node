@@ -1,5 +1,5 @@
 {
-  "development": {
+  "developments": {
     "dialect": "sqlite",
     "storage": "./src/resource/db3.sqlite3",
     "seederStorage": "sequelize",
@@ -15,7 +15,7 @@
     "swaggerApplicationName": "VOG API V1 - Test/Staging",
     "baseApiPath": "/api/v1"
   },
-  "production": {
+  "development": {
     "dialect": "postgres",
     "seederStorage": "sequelize",
     "jwtSecret": "Apple ball cat egg fat goat",

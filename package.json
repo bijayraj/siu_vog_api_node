@@ -7,7 +7,8 @@
     "db:seed:all": "npx sequelize db:seed:all",
     "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js",
     "doc:swaggerschemas": "node ./src/get-swagger-doc.js",
-    "start": "npm run db:migrate & npm run db:seed:all & env NODE_ENV=development nodemon app.js"
+    "start": "node index.js",
+    "watch": "npm run db:migrate & npm run db:seed:all & env NODE_ENV=development nodemon index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

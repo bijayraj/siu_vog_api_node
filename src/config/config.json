@@ -22,16 +22,17 @@
     }
   },
   "development": {
-    "dialect": "postgres",
-    "seederStorage": "sequelize",
-    "jwtSecret": "Apple ball cat egg fat goat",
-    "swaggerApplicationName": "VOG API V1 - Prod",
-    "baseApiPath": "/api/v1",
     "use_env_variable": "DATABASE_URL",
     "dialectOptions": {
       "ssl": {
         "require": true
       }
-    }
+    },
+    "dialect": "postgres",
+    "operatorAliases": false,
+    "seederStorage": "sequelize",
+    "jwtSecret": "Apple ball cat egg fat goat",
+    "swaggerApplicationName": "VOG API V1 - Prod",
+    "baseApiPath": "/api/v1"
   }
 }

@@ -26,9 +26,9 @@ class AuthController {
         const token = req.query.refreshToken || req.body.refreshToken;
         const ipAddress = req.ip;
         userService.refreshToken({
-                token,
-                ipAddress
-            })
+            token,
+            ipAddress
+        })
             .then((info) => {
                 res.json(info);
             })
@@ -52,9 +52,9 @@ class AuthController {
         }
 
         userService.revokeToken({
-                token,
-                ipAddress
-            })
+            token,
+            ipAddress
+        })
             .then(() => res.json({
                 message: 'Token revoked'
             }))

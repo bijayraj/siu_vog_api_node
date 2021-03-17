@@ -6,12 +6,17 @@ const debug = require('debug')('alumni-directory-api:server');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const api = require('./src/api');
-const swagger = require('./src/swagger')
-const APIError = require('./src/helpers/APIError')
+const swagger = require('./src/swagger');
+const APIError = require('./src/helpers/APIError');
 const helmet = require('helmet');
 const cors = require('cors');
-const expressValidation = require('express-validation')
+const expressValidation = require('express-validation');
 const Sequelize = require('sequelize');
+const httpStatus = require('http-status-codes');
+
+require('dotenv').config();
+
+const config = require('./src/config');
 
 const startServer = function (port) {
     const app = express();
@@ -59,7 +64,7 @@ const startServer = function (port) {
         } else if (err instanceof Sequelize.ValidationError) {
             const unifiedErrorMessage = err.errors
                 .map(error => error.message)
-                .join(' and ')
+                .join(' and ');
             const error = new APIError(unifiedErrorMessage, err.statusCode, true);
             return next(error);
         } else if (!(err instanceof APIError)) {
@@ -71,17 +76,17 @@ const startServer = function (port) {
 
     // catch 404 and forward to error handler
     app.use((req, res, next) => {
-        const err = new APIError('API not found', httpStatus.NOT_FOUND);
+        const err = new APIError('API not found', httpStatus.StatusCodes.NOT_FOUND);
         return next(err);
     });
 
 
     app.use((
-            err,
-            req,
-            res,
-            next, // eslint-disable-line no-unused-vars
-        ) =>
+        err,
+        req,
+        res,
+        next, // eslint-disable-line no-unused-vars
+    ) =>
         res.status(err.status || 500).json({
             message: err.isPublic ? err.message : httpStatus[err.status],
             stack: process.env.NODE_ENV === 'development' ? err.stack : {},

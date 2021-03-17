@@ -13,7 +13,13 @@
     "seederStorage": "sequelize",
     "jwtSecret": "Apple ball cat",
     "swaggerApplicationName": "VOG API V1 - Test/Staging",
-    "baseApiPath": "/api/v1"
+    "baseApiPath": "/api/v1",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "development": {
     "dialect": "postgres",
@@ -22,12 +28,6 @@
     "swaggerApplicationName": "VOG API V1 - Prod",
     "baseApiPath": "/api/v1",
     "protocol": "postgres",
-    "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false
-      }
-    },
     "use_env_variable": "DATABASE_URL"
   }
 }

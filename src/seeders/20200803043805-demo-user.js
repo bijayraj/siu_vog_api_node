@@ -5,9 +5,9 @@ const crypto = require('crypto');
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        const password = bcrypt.hashSync('admin', 10);
+        const password = bcrypt.hashSync('admin123', 10);
         const vToken = crypto.randomBytes(40).toString('hex');
-        await queryInterface.bulkInsert('users', [{
+        await queryInterface.bulkInsert('Users', [{
             username: 'admin',
             password: password,
             first_name:'Bijay Raj',
@@ -24,7 +24,7 @@ module.exports = {
     },
 
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.bulkDelete('users', [{
+        await queryInterface.bulkDelete('Users', [{
             username: 'admin'
         }], {});
 

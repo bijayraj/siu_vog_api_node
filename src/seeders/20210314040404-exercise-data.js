@@ -4,7 +4,7 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
 
 
-        await queryInterface.bulkInsert('exercises', [{
+        await queryInterface.bulkInsert('Exercises', [{
             title: 'Humming',
             sub_title: 'mmmmmmm',
             details: 'Keep a long face (closed lips & open jaw). Use comfortable pitch. You can also glide-up and down within a comfortable range and hum portions of favorite or recitable tunes such as ‘Happy birthday to you’ for example.',
@@ -34,7 +34,7 @@ module.exports = {
     },
 
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.bulkDelete('exercises', [{
+        await queryInterface.bulkDelete('Exercises', [{
 
         }], {});
     

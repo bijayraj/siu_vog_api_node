@@ -22,13 +22,13 @@ class UserService {
         });
 
         if (!user || !bcrypt.compareSync(password, user.password)) {
-            throw new APIError('Authentication error, Username or password did not match', httpStatus.UNAUTHORIZED, true)
+            throw new APIError('Authentication error, Username or password did not match', httpStatus.UNAUTHORIZED, true);
         }
 
         const jwtToken = this.generateJwtToken(user);
         const refreshToken = this.generateRefreshToken(user, ipAddress);
 
-        console.log("HEY REACHED HERE!!");
+        console.log('HEY REACHED HERE!!');
         //Save refresh token
         await refreshToken.save();
 
@@ -42,11 +42,18 @@ class UserService {
 
     async register(params, origin) {
         // validate
+        if (!params.username)
+        {
+            params.username = params.email;
+        }
+        // console.log('REached here');
+        // console.log(params);
+
         if (await db.User.findOne({
-                where: {
-                    username: params.username
-                }
-            })) {
+            where: {
+                username: params.username
+            }
+        })) {
             // send already registered error in email to prevent account enumeration
             // return await sendAlreadyRegisteredEmail(params.email, origin);
         }
